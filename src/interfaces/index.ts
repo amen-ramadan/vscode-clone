@@ -3,4 +3,5 @@ export interface IFile {
   isFolder: boolean;
   children?: IFile[];
   content?: string;
+  id: string;
 }
