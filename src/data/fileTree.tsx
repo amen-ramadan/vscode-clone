@@ -33,6 +33,7 @@ export const fileTree: IFile = {
               id: uuid(),
               name: "Button.tsx",
               isFolder: false,
+              content: "bottom content",
             },
           ],
         },
