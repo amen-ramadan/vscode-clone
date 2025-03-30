@@ -6,7 +6,7 @@ import RenderFileIcon from "./RenderFileIcon";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../app/store";
 import {
-  setActiveTabIdAction,
+  setClickedFileAction,
   setOpenFilesAction,
 } from "../app/features/fileTreeSlice";
 import { doesFileObjectExist } from "../utils/function";
@@ -16,7 +16,7 @@ interface IProps {
 }
 
 const RecursiveComponent = ({ fileTree }: IProps) => {
-  const { id, name, isFolder, children } = fileTree;
+  const { id, name, isFolder, content, children } = fileTree;
   const dispatch = useDispatch();
   const { openedFiles } = useSelector((state: RootState) => state.tree);
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -26,9 +26,15 @@ const RecursiveComponent = ({ fileTree }: IProps) => {
 
   const onFileClicked = () => {
     const exist = doesFileObjectExist(openedFiles, id);
+    dispatch(
+      setClickedFileAction({
+        activeTabId: id,
+        filename: name,
+        fileContent: content,
+      })
+    );
     if (exist) return;
     dispatch(setOpenFilesAction([...openedFiles, fileTree]));
-    dispatch(setActiveTabIdAction(id));
   };
 
   return (

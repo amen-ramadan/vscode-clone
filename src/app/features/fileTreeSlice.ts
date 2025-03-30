@@ -33,12 +33,9 @@ const fileTreeSlice = createSlice({
     setClickedFileAction: (state, action: PayloadAction<IClickedFile>) => {
       state.clickedFile= action.payload;
     },
-    setActiveTabIdAction: (state, action: PayloadAction<string>) => {
-      state.clickedFile.activeTabId = action.payload;
-    },
   },
 })
 
-export const { setOpenFilesAction, setClickedFileAction, setActiveTabIdAction } = fileTreeSlice.actions;
+export const { setOpenFilesAction, setClickedFileAction } = fileTreeSlice.actions;
 
 export default fileTreeSlice.reducer;
