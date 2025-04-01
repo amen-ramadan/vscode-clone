@@ -2,6 +2,9 @@
 
 A modern code editor built with React, TypeScript, and Redux, inspired by Visual Studio Code.
 
+## Live Demo
+[VS Code Clone 👀](https://vscode-clone-eosin.vercel.app/)
+
 ## 🚀 Features
 
 - 📝 Modern code editing interface
