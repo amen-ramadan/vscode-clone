@@ -60,10 +60,7 @@ vscode-clone/
 - Build for production: `pnpm build`
 - Preview production build: `pnpm preview`
 - Run linting: `pnpm lint`
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+- 
 
 ## 🙏 Contributing
 
